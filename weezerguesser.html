@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Weezerguesser</title>
+    <link rel="stylesheet" href="./weezerguesser.css">
+    <script src="./weezerguesser.js" defer></script>
+    <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+</head>
+<body>
+    <button id="settings">Settings</button>
+    <div id="settingspopup">
+        <button>Difficulty Settings</button>
+        <button id="toggleBGsettings">Theme Settings</button>
+        <div id="bg-settings">
+            <button id="bluesolid">Blue</button> <br>
+            <button id="greensolid">Green</button> <br>
+            <button id="redsolid">Red</button> <br>
+            <button id="whitesolid">White</button> <br>
+            <button id="tealsolid">Teal</button> <br>
+            <button id="blacksolid">Black</button>
+        </div>
+    </div>
+    <div id="counters">
+        <span id="correct-display">
+            
+        </span>
+    </div>
+    <div id="most-stuff">
+    <h1>weezer guesser</h1>
+    <button id="quizstartbutton">Start Quiz!</button> <br>
+
+    <span id="lyricdisplay"></span> <br>
+
+    <input id="guessinput" type="text" placeholder="type or search song title here">
+    <button id="submit">Submit Answer</button>
+    <span id="result"></span> <br>
+    <button id="next">Next</button> <br>
+    <div id="reminder">
+        <span>*remember to include any special characters
+        ("Say It Ain<mark>'</mark>t So", or "Why Bother<mark>?</mark>" for example.)</span>
+    </div>
+
+        <ul id="discography">
+    <li class="possiblesongs">My Name Is Jonas</li>
+    <li class="possiblesongs">No One Else</li>
+    <li class="possiblesongs">The World Has Turned And Left Me Here</li>
+    <li class="possiblesongs">Buddy Holly</li>
+    <li class="possiblesongs">Undone - The Sweater Song</li>
+    <li class="possiblesongs">Surf Wax America</li>
+    <li class="possiblesongs">Say It Aint So</li>
+    <li class="possiblesongs">In The Garage</li>
+    <li class="possiblesongs">Holiday</li>
+    <li class="possiblesongs">Only In Dreams</li>
+    <li class="possiblesongs">Tired of Sex</li>
+    <li class="possiblesongs">Getchoo</li>
+    <li class="possiblesongs">No Other One</li>
+    <li class="possiblesongs">Why Bother?</li>
+    <li class="possiblesongs">Across The Sea</li>
+    <li class="possiblesongs">The Good Life</li>
+    <li class="possiblesongs">El Scorcho</li>
+    <li class="possiblesongs">Pink Triangle</li>
+    <li class="possiblesongs">Falling For You</li>
+    <li class="possiblesongs">Butterfly</li>
+    <li class="possiblesongs">Don't Let Go</li>
+    <li class="possiblesongs">Photograph</li>
+    <li class="possiblesongs">Hash Pipe</li>
+    <li class="possiblesongs">Island In The Sun</li>
+    <li class="possiblesongs">Crab</li>
+    <li class="possiblesongs">Knockdown Dragout</li>
+    <li class="possiblesongs">Smile</li>
+    <li class="possiblesongs">Simple Pages</li>
+    <li class="possiblesongs">Glorious Day</li>
+    <li class="possiblesongs">O Girlfriend</li>
+    <li class="possiblesongs">American Gigolo</li>
+    <li class="possiblesongs">Dope Nose</li>
+    <li class="possiblesongs">Keep Fishin'</li>
+    <li class="possiblesongs">Take Control</li>
+    <li class="possiblesongs">Death and Destruction</li>
+    <li class="possiblesongs">Slob</li>
+    <li class="possiblesongs">Burndt Jamb</li>
+    <li class="possiblesongs">Space Rock</li>
+    <li class="possiblesongs">Slave</li>
+    <li class="possiblesongs">Fall Together</li>
+    <li class="possiblesongs">Possibilities</li>
+    <li class="possiblesongs">Love Explosion</li>
+    <li class="possiblesongs">December</li>
+    <li class="possiblesongs">Beverly Hills</li>
+    <li class="possiblesongs">Perfect Situation</li>
+    <li class="possiblesongs">This Is Such a Pity</li>
+    <li class="possiblesongs">Hold Me</li>
+    <li class="possiblesongs">Peace</li>
+    <li class="possiblesongs">We Are All on Drugs</li>
+    <li class="possiblesongs">The Damage in Your Heart</li>
+    <li class="possiblesongs">Pardon Me</li>
+    <li class="possiblesongs">My Best Friend</li>
+    <li class="possiblesongs">The Other Way</li>
+    <li class="possiblesongs">Freak Me Out</li>
+    <li class="possiblesongs">Haunt You Every Day</li>
+    <li class="possiblesongs">Troublemaker</li>
+    <li class="possiblesongs">The Greatest Man That Ever Lived (Variations on a Shaker Hymn)</li>
+    <li class="possiblesongs">Pork and Beans</li>
+    <li class="possiblesongs">Heart Songs</li>
+    <li class="possiblesongs">Everybody Get Dangerous</li>
+    <li class="possiblesongs">Dreamin'</li>
+    <li class="possiblesongs">Thought I knew</li>
+    <li class="possiblesongs">Cold Dark World</li>
+    <li class="possiblesongs">Automatic</li>
+    <li class="possiblesongs">The Angel and the One</li>
+    <li class="possiblesongs">(If You're Wondering If I Want You To) I Want You To</li>
+    <li class="possiblesongs">I'm Your Daddy</li>
+    <li class="possiblesongs">The Girl Got Hot</li>
+    <li class="possiblesongs">Can't Stop Partying (featuring Lil Wayne)</li>
+    <li class="possiblesongs">Put Me Back Together</li>
+    <li class="possiblesongs">Trippin' Down the Freeway</li>
+    <li class="possiblesongs">Love Is the Answer</li>
+    <li class="possiblesongs">Let It All Hang Out</li>
+    <li class="possiblesongs">In the Mall</li>
+    <li class="possiblesongs">I Don't Want to Let You Go</li>
+    <li class="possiblesongs">Memories</li>
+    <li class="possiblesongs">Ruling Me</li>
+    <li class="possiblesongs">Trainwrecks</li>
+    <li class="possiblesongs">Unspoken</li>
+    <li class="possiblesongs">Where's My Sex?</li>
+    <li class="possiblesongs">Run Away</li>
+    <li class="possiblesongs">Hang On</li>
+    <li class="possiblesongs">Smart Girls</li>
+    <li class="possiblesongs">Brave New World</li>
+    <li class="possiblesongs">Time Flies</li>
+    <li class="possiblesongs">Ain't Got Nobody</li>
+    <li class="possiblesongs">Back to the Shack</li>
+    <li class="possiblesongs">Eulogy for a Rock Band</li>
+    <li class="possiblesongs">Lonely Girl</li>
+    <li class="possiblesongs">I've Had It Up to Here</li>
+    <li class="possiblesongs">The British Are Coming</li>
+    <li class="possiblesongs">Da Vinci</li>
+    <li class="possiblesongs">Go Away</li>
+    <li class="possiblesongs">Cleopatra</li>
+    <li class="possiblesongs">Foolish Father</li>
+    <li class="possiblesongs">I. The Waste Land</li>
+    <li class="possiblesongs">II. Anonymous</li>
+    <li class="possiblesongs">III. Return to Ithaka</li>
+    <li class="possiblesongs">California Kids</li>
+    <li class="possiblesongs">Wind in Our Sail</li>
+    <li class="possiblesongs">Thank God for Girls</li>
+    <li class="possiblesongs">(Girl we Got A) Good Thing</li>
+    <li class="possiblesongs">Do You Wanna Get High?</li>
+    <li class="possiblesongs">King of the World</li>
+    <li class="possiblesongs">Summer Elaine and Drunk Dori</li>
+    <li class="possiblesongs">L.A. Girls</li>
+    <li class="possiblesongs">Jacked Up</li>
+    <li class="possiblesongs">Endless Bummer</li>
+    <li class="possiblesongs">Mexican Fender</li>
+    <li class="possiblesongs">Beach Boys</li>
+    <li class="possiblesongs">Feels Like Summer</li>
+    <li class="possiblesongs">Happy Hour</li>
+    <li class="possiblesongs">Weekend Woman</li>
+    <li class="possiblesongs">QB Blitz</li>
+    <li class="possiblesongs">Sweet Mary</li>
+    <li class="possiblesongs">Get Right</li>
+    <li class="possiblesongs">La Mancha Screwjob</li>
+    <li class="possiblesongs">Any Friend of Diane's</li>
+    <li class="possiblesongs">Can't Knock the Hustle</li>
+    <li class="possiblesongs">Zombie Bastards</li>
+    <li class="possiblesongs">High as a Kite</li>
+    <li class="possiblesongs">Living in L.A.</li>
+    <li class="possiblesongs">Piece of Cake</li>
+    <li class="possiblesongs">I'm Just Being Honest</li>
+    <li class="possiblesongs">Too Many Thoughts in My Head</li>
+    <li class="possiblesongs">The Prince Who Wanted Everything</li>
+    <li class="possiblesongs">Byzantine</li>
+    <li class="possiblesongs">California Snow</li>
+    <li class="possiblesongs">All My Favorite Songs</li>
+    <li class="possiblesongs">Aloo Gobi</li>
+    <li class="possiblesongs">Grapes of Wrath</li>
+    <li class="possiblesongs">Numbers</li>
+    <li class="possiblesongs">Playing My Piano</li>
+    <li class="possiblesongs">Mirror Image</li>
+    <li class="possiblesongs">Screens</li>
+    <li class="possiblesongs">Bird with a Broken Wing</li>
+    <li class="possiblesongs">Dead Roses</li>
+    <li class="possiblesongs">Everything Happens for a Reason</li>
+    <li class="possiblesongs">Here Comes the Rain</li>
+    <li class="possiblesongs">La Brea Tar Pits</li>
+    <li class="possiblesongs">Hero</li>
+    <li class="possiblesongs">All the Good Ones</li>
+    <li class="possiblesongs">The End of the Game</li>
+    <li class="possiblesongs">I Need Some of That</li>
+    <li class="possiblesongs">Beginning of the End</li>
+    <li class="possiblesongs">Blue Dream</li>
+    <li class="possiblesongs">1 More Hit</li>
+    <li class="possiblesongs">Sheila Can Do It</li>
+    <li class="possiblesongs">She Needs Me</li>
+    <li class="possiblesongs">Precious Metal Girl</li>
+    <li class="possiblesongs">Opening Night</li>
+    <li class="possiblesongs">Angels on Vacation</li>
+    <li class="possiblesongs">A Little Bit of Love</li>
+    <li class="possiblesongs">The Garden of Eden</li>
+    <li class="possiblesongs">The Sound of Drums</li>
+    <li class="possiblesongs">All This Love</li>
+    <li class="possiblesongs">Across the Meadow</li>
+    <li class="possiblesongs">Wild at Heart</li>
+    <li class="possiblesongs">Lawn Chair</li>
+    <li class="possiblesongs">Records</li>
+    <li class="possiblesongs">Blue Like Jazz</li>
+    <li class="possiblesongs">The Opposite of Me</li>
+    <li class="possiblesongs">What's the Good of Being Good</li>
+    <li class="possiblesongs">Cuomoville</li>
+    <li class="possiblesongs">Portia</li>
+    <li class="possiblesongs">Thank You and Good Night</li>
+    <li class="possiblesongs">Can't Dance, Don't Ask Me</li>
+    <li class="possiblesongs">Get Off on the Pain</li>
+    <li class="possiblesongs">What Happens After You?</li>
+    <li class="possiblesongs">Francesca</li>
+    <li class="possiblesongs">Should She Stay of Should She Go</li>
+    <li class="possiblesongs">The Way I Hate You Now</li>
+    <li class="possiblesongs">Tastes Like Pain</li>
+    <li class="possiblesongs">Run, Raven, Run</li>
+    <li class="possiblesongs">I Want a Dog</li>
+    <li class="possiblesongs">Iambic Pentameter</li>
+    <li class="possiblesongs">Basketball</li>
+    <li class="possiblesongs">Sheraton Commander</li>
+    <li class="possiblesongs">Dark Enough to See the Stars</li>
+    <li class="possiblesongs">The One That Got Away</li>
+    <li class="possiblesongs">Why Don't You Get Me</li>
+    <li class="possiblesongs">The Deep and Dreamless Sleep</li>
+        </ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+#most-stuff {
+    text-align: center;
+    font-family: century-gothic, sans-serif;
+}
+
+#settings {
+    position: relative;
+
+}
+#settingspopup {
+    visibility: hidden;
+    border: 3px;
+}
+#discography {
+    visibility: hidden;
+    margin-left: 30%;
+    text-align: left;
+    list-style: none;
+}
+#bg-settings {
+    visibility: hidden;
+    margin-left: 7.6rem;
+    position: absolute;
+}
+.possiblesongs {
+    border: 3px solid black;
+    width: max-content;
+}
+.possiblesongs:hover {
+    color: aqua;
+    cursor: pointer;
+}
