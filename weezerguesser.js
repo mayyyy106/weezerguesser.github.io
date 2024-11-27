@@ -316,7 +316,7 @@ var lyrics = [
             "Your drug is a heartbreaker",
             "Say it ain't so",
             "My love is a life taker",],
-        title: "Say It Aint So",
+        title: "Say It Ain't So",
         album: "Blue",
     },
     {
