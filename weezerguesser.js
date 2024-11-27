@@ -2977,48 +2977,6 @@ var lyrics = [
         title: "The Girl Got Hot",
         album: "Raditude",
     },
-    {
-        lyric: [
-           ,],
-        title: "Can't Stop Partying",
-        album: "Raditude",
-    },
-    {
-        lyric: [
-           ,],
-        title: "Put Me Back Together",
-        album: "Raditude",
-    },
-    {
-        lyric: [
-           ,],
-        title: "Trippin' down the Freeway",
-        album: "Raditude",
-    },
-    {
-        lyric: [
-           ,],
-        title: "Love Is the Answer",
-        album: "Raditude",
-    },
-    {
-        lyric: [
-           ,],
-        title: "Let It All Hang Out",
-        album: "Raditude",
-    },
-    {
-        lyric: [
-           ,],
-        title: "In the Mall",
-        album: "Raditude",
-    },
-    {
-        lyric: [
-           ,],
-        title: "I Don't Want to Let You Go",
-        album: "Raditude",
-    },
 ]
 
 
