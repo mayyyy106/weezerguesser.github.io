@@ -13,6 +13,12 @@ var themeSelect = document.getElementById("bg-settings")
 var difficultyCustomize = document.getElementById("difficulty-settings")
 var possibleSongs = document.getElementsByClassName("possiblesongs")
 var htmlBody = document.getElementsByTagName("body")
+var amountCorrect = 0
+var amountRandomized = 0
+var correctCounter = document.getElementById("correctguesses")
+var questionCounter = document.getElementById("amountrandom")
+var correctDisplay = document.getElementById("correctAnswerShown")
+var showRightSong = document.getElementById("yougotwrong")
 
 //bg themes for each album
 var solidBlueTheme = document.getElementById("bluesolid")
@@ -2325,7 +2331,7 @@ var lyrics = [
             "I am the greatest man that ever lives",
             "I was born to give"
            ,],
-        title: "The Greatest Man the Ever Lived",
+        title: "The Greatest Man That Ever Lived (Variations on a Shaker Hymn)",
         album: "Red",
     },
     {
@@ -2685,7 +2691,7 @@ var lyrics = [
             "With your program",
             "Take back the love"
            ,],
-        title: "Dreamin",
+        title: "Dreamin'",
         album: "Red",
     },
     {
@@ -4098,8 +4104,16 @@ function StartQuiz() {
     console.log("test");
     lyrics.style.visibility = "visible";
 }
+
+//randomize which lyric is chosen
 function randomizeSong() {
+    //let songTitle = "";
+    //get the random whole number
     song = Math.floor(Math.random(lyrics.length)*(lyrics.length));
+    //reassign song title
+    //songTitle = lyrics[number].title;
+    //console.log(number);
+    //console.log(songTitle);
     randomizeLyric(song);
     resultdisplay.style.visibility = "hidden";
 }
@@ -4108,7 +4122,12 @@ function randomizeLyric(song) {
     let number = Math.floor(Math.random(lyrics[song].lyric.length)*(lyrics[song].lyric.length));
     var line = lyrics[song].lyric[number];
     console.log(line);
-    document.getElementById("lyricdisplay").innerHTML = (line)
+    document.getElementById("lyricdisplay").innerHTML = (line);
+    
+    correctDisplay.style.visibility = "hidden";
+    amountRandomized++;
+    questionCounter.innerHTML = (amountRandomized)
+    console.log(amountRandomized)
     
 }
 
@@ -4116,35 +4135,53 @@ function result() {
     if (UserGuess.value.toUpperCase() === lyrics[song].title.toUpperCase()){
         resultdisplay.style.visibility = "visible";
         resultdisplay.innerHTML = ("Correct");
+        amountCorrect++;
+        correctCounter.innerHTML = (amountCorrect)
+        
     }
     else {
         resultdisplay.style.visibility = "visible";
-        resultdisplay.innerHTML = ("Incorrect")
+        resultdisplay.innerHTML = ("Incorrect");
+        correctDisplay.style.visibility = "visible";
+        showRightSong.innerHTML = (lyrics[song].title)
     }
 
 }
 
 function Answer() {
+    //check if the userinput is empty
     if (UserGuess === "") {
+        //hide list of songs
         discography.style.visibility = "hidden";
     }
-    else {
+    else { //search bar is not empty, display list 
         discography.style.visibility = "visible";
     }
     for (var counter=0; counter < possibleSongs.length; counter++) {
 
-    if (possibleSongs[counter].textContent.toUpperCase().includes(UserGuess.value.toUpperCase())){
+        if (possibleSongs[counter].textContent.toUpperCase().includes(UserGuess.value.toUpperCase())){
+            //check for matching song titles
             possibleSongs[counter].style.display = ""
         }
-    else {
+        else {
               possibleSongs[counter].style.display = "none"
         }
     }
 
     
     console.log(UserGuess.value)
+    //if (discography.includes(UserGuess)) {
+      //  console.log ("match")
+    //}
+
+}
+//clicked on song in the searchbar
+function searchedForSong(i) {
+    
 
 
+    console.log(possibleSongs[i].textContent)
+    UserGuess.value = possibleSongs[i].textContent;
 }
 
 function OpenSettings() {
@@ -4184,11 +4221,220 @@ SubmitButton.onclick = result
 next.onclick = randomizeSong
 SettingsButton.onclick = OpenSettings
 UserGuess.onkeyup = Answer
-discography.onclick = searchedForSong
+possibleSongs[0].onclick = function() {searchedForSong(0)} 
+possibleSongs[1].onclick = function() {searchedForSong(1)} 
+possibleSongs[2].onclick = function() {searchedForSong(2)} 
+possibleSongs[3].onclick = function() {searchedForSong(3)} 
+possibleSongs[4].onclick = function() {searchedForSong(4)} 
+possibleSongs[5].onclick = function() {searchedForSong(5)} 
+possibleSongs[6].onclick = function() {searchedForSong(6)} 
+possibleSongs[7].onclick = function() {searchedForSong(7)} 
+possibleSongs[8].onclick = function() {searchedForSong(8)} 
+possibleSongs[9].onclick = function() {searchedForSong(9)} 
+possibleSongs[10].onclick = function() {searchedForSong(10)} 
+possibleSongs[11].onclick = function() {searchedForSong(11)} 
+possibleSongs[12].onclick = function() {searchedForSong(12)} 
+possibleSongs[13].onclick = function() {searchedForSong(13)} 
+possibleSongs[14].onclick = function() {searchedForSong(14)} 
+possibleSongs[15].onclick = function() {searchedForSong(15)} 
+possibleSongs[16].onclick = function() {searchedForSong(16)} 
+possibleSongs[17].onclick = function() {searchedForSong(17)} 
+possibleSongs[18].onclick = function() {searchedForSong(18)} 
+possibleSongs[19].onclick = function() {searchedForSong(19)} 
+possibleSongs[20].onclick = function() {searchedForSong(20)} 
+possibleSongs[21].onclick = function() {searchedForSong(21)} 
+possibleSongs[22].onclick = function() {searchedForSong(22)} 
+possibleSongs[23].onclick = function() {searchedForSong(23)} 
+possibleSongs[24].onclick = function() {searchedForSong(24)} 
+possibleSongs[25].onclick = function() {searchedForSong(25)} 
+possibleSongs[26].onclick = function() {searchedForSong(26)} 
+possibleSongs[27].onclick = function() {searchedForSong(27)} 
+possibleSongs[28].onclick = function() {searchedForSong(28)} 
+possibleSongs[29].onclick = function() {searchedForSong(29)} 
+possibleSongs[30].onclick = function() {searchedForSong(30)} 
+possibleSongs[31].onclick = function() {searchedForSong(31)} 
+possibleSongs[32].onclick = function() {searchedForSong(32)} 
+possibleSongs[33].onclick = function() {searchedForSong(33)} 
+possibleSongs[34].onclick = function() {searchedForSong(34)} 
+possibleSongs[35].onclick = function() {searchedForSong(35)} 
+possibleSongs[36].onclick = function() {searchedForSong(36)} 
+possibleSongs[37].onclick = function() {searchedForSong(37)} 
+possibleSongs[38].onclick = function() {searchedForSong(38)} 
+possibleSongs[39].onclick = function() {searchedForSong(39)} 
+possibleSongs[40].onclick = function() {searchedForSong(40)} 
+possibleSongs[41].onclick = function() {searchedForSong(41)} 
+possibleSongs[42].onclick = function() {searchedForSong(42)} 
+possibleSongs[43].onclick = function() {searchedForSong(43)} 
+possibleSongs[44].onclick = function() {searchedForSong(44)} 
+possibleSongs[45].onclick = function() {searchedForSong(45)} 
+possibleSongs[46].onclick = function() {searchedForSong(46)} 
+possibleSongs[47].onclick = function() {searchedForSong(47)} 
+possibleSongs[48].onclick = function() {searchedForSong(48)} 
+possibleSongs[49].onclick = function() {searchedForSong(49)} 
+possibleSongs[50].onclick = function() {searchedForSong(50)} 
+possibleSongs[51].onclick = function() {searchedForSong(51)} 
+possibleSongs[52].onclick = function() {searchedForSong(52)} 
+possibleSongs[53].onclick = function() {searchedForSong(53)} 
+possibleSongs[54].onclick = function() {searchedForSong(54)} 
+possibleSongs[55].onclick = function() {searchedForSong(55)} 
+possibleSongs[56].onclick = function() {searchedForSong(56)} 
+possibleSongs[57].onclick = function() {searchedForSong(57)} 
+possibleSongs[58].onclick = function() {searchedForSong(58)} 
+possibleSongs[59].onclick = function() {searchedForSong(59)} 
+possibleSongs[60].onclick = function() {searchedForSong(60)} 
+possibleSongs[61].onclick = function() {searchedForSong(61)} 
+possibleSongs[62].onclick = function() {searchedForSong(62)} 
+possibleSongs[63].onclick = function() {searchedForSong(63)} 
+possibleSongs[64].onclick = function() {searchedForSong(64)} 
+possibleSongs[65].onclick = function() {searchedForSong(65)} 
+possibleSongs[66].onclick = function() {searchedForSong(66)} 
+possibleSongs[67].onclick = function() {searchedForSong(67)} 
+possibleSongs[68].onclick = function() {searchedForSong(68)} 
+possibleSongs[69].onclick = function() {searchedForSong(69)} 
+possibleSongs[70].onclick = function() {searchedForSong(70)} 
+possibleSongs[71].onclick = function() {searchedForSong(71)} 
+possibleSongs[72].onclick = function() {searchedForSong(72)} 
+possibleSongs[73].onclick = function() {searchedForSong(73)} 
+possibleSongs[74].onclick = function() {searchedForSong(74)} 
+possibleSongs[75].onclick = function() {searchedForSong(75)} 
+possibleSongs[76].onclick = function() {searchedForSong(76)} 
+possibleSongs[77].onclick = function() {searchedForSong(77)} 
+possibleSongs[78].onclick = function() {searchedForSong(78)} 
+possibleSongs[79].onclick = function() {searchedForSong(79)} 
+possibleSongs[80].onclick = function() {searchedForSong(80)} 
+possibleSongs[81].onclick = function() {searchedForSong(81)} 
+possibleSongs[82].onclick = function() {searchedForSong(82)} 
+possibleSongs[83].onclick = function() {searchedForSong(83)} 
+possibleSongs[84].onclick = function() {searchedForSong(84)} 
+possibleSongs[85].onclick = function() {searchedForSong(85)} 
+possibleSongs[86].onclick = function() {searchedForSong(86)} 
+possibleSongs[87].onclick = function() {searchedForSong(87)} 
+possibleSongs[88].onclick = function() {searchedForSong(88)} 
+possibleSongs[89].onclick = function() {searchedForSong(89)} 
+possibleSongs[90].onclick = function() {searchedForSong(90)} 
+possibleSongs[91].onclick = function() {searchedForSong(91)} 
+possibleSongs[92].onclick = function() {searchedForSong(92)} 
+possibleSongs[93].onclick = function() {searchedForSong(93)} 
+possibleSongs[94].onclick = function() {searchedForSong(94)} 
+possibleSongs[95].onclick = function() {searchedForSong(95)} 
+possibleSongs[96].onclick = function() {searchedForSong(96)} 
+possibleSongs[97].onclick = function() {searchedForSong(97)} 
+possibleSongs[98].onclick = function() {searchedForSong(98)} 
+possibleSongs[99].onclick = function() {searchedForSong(99)} 
+possibleSongs[100].onclick = function() {searchedForSong(100)} 
+possibleSongs[101].onclick = function() {searchedForSong(101)} 
+possibleSongs[102].onclick = function() {searchedForSong(102)} 
+possibleSongs[103].onclick = function() {searchedForSong(103)} 
+possibleSongs[104].onclick = function() {searchedForSong(104)} 
+possibleSongs[105].onclick = function() {searchedForSong(105)} 
+possibleSongs[106].onclick = function() {searchedForSong(106)} 
+possibleSongs[107].onclick = function() {searchedForSong(107)} 
+possibleSongs[108].onclick = function() {searchedForSong(108)} 
+possibleSongs[109].onclick = function() {searchedForSong(109)} 
+possibleSongs[110].onclick = function() {searchedForSong(110)} 
+possibleSongs[111].onclick = function() {searchedForSong(111)} 
+possibleSongs[112].onclick = function() {searchedForSong(112)} 
+possibleSongs[113].onclick = function() {searchedForSong(113)} 
+possibleSongs[114].onclick = function() {searchedForSong(114)} 
+possibleSongs[115].onclick = function() {searchedForSong(115)} 
+possibleSongs[116].onclick = function() {searchedForSong(116)} 
+possibleSongs[117].onclick = function() {searchedForSong(117)} 
+possibleSongs[118].onclick = function() {searchedForSong(118)} 
+possibleSongs[119].onclick = function() {searchedForSong(119)} 
+possibleSongs[120].onclick = function() {searchedForSong(120)} 
+possibleSongs[121].onclick = function() {searchedForSong(121)} 
+possibleSongs[122].onclick = function() {searchedForSong(122)} 
+possibleSongs[123].onclick = function() {searchedForSong(123)} 
+possibleSongs[124].onclick = function() {searchedForSong(124)} 
+possibleSongs[125].onclick = function() {searchedForSong(125)} 
+possibleSongs[126].onclick = function() {searchedForSong(126)} 
+possibleSongs[127].onclick = function() {searchedForSong(127)} 
+possibleSongs[128].onclick = function() {searchedForSong(128)} 
+possibleSongs[129].onclick = function() {searchedForSong(129)} 
+possibleSongs[130].onclick = function() {searchedForSong(130)} 
+possibleSongs[131].onclick = function() {searchedForSong(131)} 
+possibleSongs[132].onclick = function() {searchedForSong(132)} 
+possibleSongs[133].onclick = function() {searchedForSong(133)} 
+possibleSongs[134].onclick = function() {searchedForSong(134)} 
+possibleSongs[135].onclick = function() {searchedForSong(135)} 
+possibleSongs[136].onclick = function() {searchedForSong(136)} 
+possibleSongs[137].onclick = function() {searchedForSong(137)} 
+possibleSongs[138].onclick = function() {searchedForSong(138)} 
+possibleSongs[139].onclick = function() {searchedForSong(139)} 
+possibleSongs[140].onclick = function() {searchedForSong(140)} 
+possibleSongs[141].onclick = function() {searchedForSong(141)} 
+possibleSongs[142].onclick = function() {searchedForSong(142)} 
+possibleSongs[143].onclick = function() {searchedForSong(143)} 
+possibleSongs[144].onclick = function() {searchedForSong(144)} 
+possibleSongs[145].onclick = function() {searchedForSong(145)} 
+possibleSongs[146].onclick = function() {searchedForSong(146)} 
+possibleSongs[147].onclick = function() {searchedForSong(147)} 
+possibleSongs[148].onclick = function() {searchedForSong(148)} 
+possibleSongs[149].onclick = function() {searchedForSong(149)} 
+possibleSongs[150].onclick = function() {searchedForSong(150)} 
+possibleSongs[151].onclick = function() {searchedForSong(151)} 
+possibleSongs[152].onclick = function() {searchedForSong(152)} 
+possibleSongs[153].onclick = function() {searchedForSong(153)} 
+possibleSongs[154].onclick = function() {searchedForSong(154)} 
+possibleSongs[155].onclick = function() {searchedForSong(155)} 
+possibleSongs[156].onclick = function() {searchedForSong(156)} 
+possibleSongs[157].onclick = function() {searchedForSong(157)} 
+possibleSongs[158].onclick = function() {searchedForSong(158)} 
+possibleSongs[159].onclick = function() {searchedForSong(159)} 
+possibleSongs[160].onclick = function() {searchedForSong(160)} 
+possibleSongs[161].onclick = function() {searchedForSong(161)} 
+possibleSongs[162].onclick = function() {searchedForSong(162)} 
+possibleSongs[163].onclick = function() {searchedForSong(163)} 
+possibleSongs[164].onclick = function() {searchedForSong(164)} 
+possibleSongs[165].onclick = function() {searchedForSong(165)} 
+possibleSongs[166].onclick = function() {searchedForSong(166)} 
+possibleSongs[167].onclick = function() {searchedForSong(167)} 
+possibleSongs[168].onclick = function() {searchedForSong(168)} 
+possibleSongs[169].onclick = function() {searchedForSong(169)} 
+possibleSongs[170].onclick = function() {searchedForSong(170)} 
+possibleSongs[171].onclick = function() {searchedForSong(171)} 
+possibleSongs[172].onclick = function() {searchedForSong(172)} 
+possibleSongs[173].onclick = function() {searchedForSong(173)} 
+possibleSongs[174].onclick = function() {searchedForSong(174)} 
+possibleSongs[175].onclick = function() {searchedForSong(175)} 
+possibleSongs[176].onclick = function() {searchedForSong(176)} 
+possibleSongs[177].onclick = function() {searchedForSong(177)} 
+possibleSongs[178].onclick = function() {searchedForSong(178)} 
+possibleSongs[179].onclick = function() {searchedForSong(179)} 
+possibleSongs[180].onclick = function() {searchedForSong(180)} 
+possibleSongs[181].onclick = function() {searchedForSong(181)} 
+
+//difficultyCustomize.onclick = chooseDifficulty
+
+
 themeSelectButton.onclick = bgSelector
+
+//all are the various backgrounds
 solidBlueTheme.onclick = solidblueSelected
 solidGreenTheme.onclick = solidgreenSelected
 solidRedTheme.onclick = solidredSelected
 solidWhiteTheme.onclick = solidwhiteSelected
 solidTealTheme.onclick = solidtealSelected
 solidBlackTheme.onclick = solidblackSelected
+
+/*
+possibleSongs[182].onclick = function() {searchedForSong(182)} 
+possibleSongs[183].onclick = function() {searchedForSong(183)} 
+possibleSongs[184].onclick = function() {searchedForSong(184)} 
+possibleSongs[185].onclick = function() {searchedForSong(185)} 
+possibleSongs[186].onclick = function() {searchedForSong(186)} 
+possibleSongs[187].onclick = function() {searchedForSong(187)} 
+possibleSongs[188].onclick = function() {searchedForSong(188)} 
+possibleSongs[189].onclick = function() {searchedForSong(189)} 
+possibleSongs[190].onclick = function() {searchedForSong(190)} 
+possibleSongs[191].onclick = function() {searchedForSong(191)} 
+possibleSongs[192].onclick = function() {searchedForSong(192)} 
+possibleSongs[193].onclick = function() {searchedForSong(193)} 
+possibleSongs[194].onclick = function() {searchedForSong(194)} 
+possibleSongs[195].onclick = function() {searchedForSong(195)} 
+possibleSongs[196].onclick = function() {searchedForSong(196)} 
+possibleSongs[197].onclick = function() {searchedForSong(197)} 
+possibleSongs[198].onclick = function() {searchedForSong(198)} 
+possibleSongs[199].onclick = function() {searchedForSong(199)} 
+possibleSongs[200].onclick = function() {searchedForSong(200)} 
+*/

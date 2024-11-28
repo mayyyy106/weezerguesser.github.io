@@ -10,7 +10,7 @@
 <body>
     <button id="settings">Settings</button>
     <div id="settingspopup">
-        <button>Difficulty Settings</button>
+        <button id="difficulty-settings">Difficulty Settings</button>
         <button id="toggleBGsettings">Theme Settings</button>
         <div id="bg-settings">
             <button id="bluesolid">Blue</button> <br>
@@ -25,22 +25,25 @@
         <span id="correct-display">
             
         </span>
+        <div>amount correct: &nbsp;  <span id="correctguesses"></span>/<span id="amountrandom"></span></div>
     </div>
     <div id="most-stuff">
     <h1>weezer guesser</h1>
-    <h3>pretty early version</h3>
-    <h4>only has songs up until all of EWBAITE, also is not case sensitive!</h4>
     <button id="quizstartbutton">Start Quiz!</button> <br>
 
     <span id="lyricdisplay"></span> <br>
 
     <input id="guessinput" type="text" placeholder="type or search song title here">
-    <button id="submit">Submit Answer</button>
+    <button id="submit">Answer</button>
     <span id="result"></span> <br>
     <button id="next">Next</button> <br>
+    <div id="correctAnswerShown">Correct Answer:<span id="yougotwrong"></span></div>
     <div id="reminder">
-        <span>*remember to include any special characters
-        ("Say It Ain<mark>'</mark>t So", or "Why Bother<mark>?</mark>" for example.)</span>
+        <span>Includes all lyrics up until EWBAITE, no deluxe songs yet <br>
+            *remember to include any special characters
+        ("Say It Ain<mark>'</mark>t So", or "Why Bother<mark>?</mark>" for example.) <br>
+        now shows the correct answer if youre wrong <br>
+        also you can click on results to fill it in the search bar now</span>
     </div>
 
         <ul id="discography">
@@ -112,7 +115,7 @@
     <li class="possiblesongs">(If You're Wondering If I Want You To) I Want You To</li>
     <li class="possiblesongs">I'm Your Daddy</li>
     <li class="possiblesongs">The Girl Got Hot</li>
-    <li class="possiblesongs">Can't Stop Partying (featuring Lil Wayne)</li>
+    <li class="possiblesongs">Can't Stop Partying</li>
     <li class="possiblesongs">Put Me Back Together</li>
     <li class="possiblesongs">Trippin' Down the Freeway</li>
     <li class="possiblesongs">Love Is the Answer</li>

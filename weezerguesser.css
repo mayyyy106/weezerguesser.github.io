@@ -30,3 +30,9 @@
     color: aqua;
     cursor: pointer;
 }
+#counters {
+    text-align: center;
+}
+#correctAnswerShown {
+    visibility: hidden;
+}
